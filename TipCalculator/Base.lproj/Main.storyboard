@@ -76,7 +76,13 @@
                             <outletCollection property="gestureRecognizers" destination="zbA-0G-MnM" appends="YES" id="E4R-b0-gAe"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="deu-h8-tfQ"/>
+                    <navigationItem key="navigationItem" id="deu-h8-tfQ">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="yTx-rX-Zkn">
+                            <connections>
+                                <segue destination="9uC-Jm-bCe" kind="push" id="5yW-iU-dva"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="billAmount" destination="yq8-XX-WVI" id="FDJ-Xo-opj"/>
@@ -93,6 +99,43 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="787.5" y="504.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IeB-wx-Kd3">
+            <objects>
+                <viewController id="9uC-Jm-bCe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yYg-Dy-GWX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="y4q-Hw-Uwv">
+                                <rect key="frame" x="20" y="141" width="335" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="10%"/>
+                                    <segment title="15%"/>
+                                    <segment title="20%"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onRateChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="PqB-uX-bfd"/>
+                                    <action selector="onTap:" destination="BYZ-38-t0r" eventType="valueChanged" id="dLd-xB-Shq"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Tip Rate:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="L5p-jG-4SX">
+                                <rect key="frame" x="20" y="95" width="132" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WBH-YM-kiv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ATV-JW-3xo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1243.5" y="504.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nM0-wD-Joq">
