@@ -28,6 +28,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.tipRate.selectedSegmentIndex = [defaults integerForKey:@"defaultTipIndex"];
+    [self updateValues];
+}
+
 - (IBAction)onTap:(UITapGestureRecognizer *)sender {
     [self.view endEditing:YES];
 }

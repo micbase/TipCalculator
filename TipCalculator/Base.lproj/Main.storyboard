@@ -100,10 +100,10 @@
             </objects>
             <point key="canvasLocation" x="787.5" y="504.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="IeB-wx-Kd3">
             <objects>
-                <viewController id="9uC-Jm-bCe" sceneMemberID="viewController">
+                <viewController id="9uC-Jm-bCe" customClass="SettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yYg-Dy-GWX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,6 +118,7 @@
                                 </segments>
                                 <connections>
                                     <action selector="onRateChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="PqB-uX-bfd"/>
+                                    <action selector="onSettingRateChange:" destination="9uC-Jm-bCe" eventType="valueChanged" id="n6c-EB-uMN"/>
                                     <action selector="onTap:" destination="BYZ-38-t0r" eventType="valueChanged" id="dLd-xB-Shq"/>
                                 </connections>
                             </segmentedControl>
@@ -125,13 +126,16 @@
                                 <rect key="frame" x="20" y="95" width="132" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="WBH-YM-kiv"/>
+                    <connections>
+                        <outlet property="settingTipRate" destination="y4q-Hw-Uwv" id="NOL-id-5iX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ATV-JW-3xo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

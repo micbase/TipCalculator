@@ -9,6 +9,7 @@
 #import "SettingsViewController.h"
 
 @interface SettingsViewController ()
+@property (weak, nonatomic) IBOutlet UISegmentedControl *settingTipRate;
 
 @end
 
@@ -22,6 +23,17 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.settingTipRate.selectedSegmentIndex = [defaults integerForKey:@"defaultTipIndex"];
+}
+
+- (IBAction)onSettingRateChange:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setFloat:self.settingTipRate.selectedSegmentIndex forKey:@"defaultTipIndex"];
+    [defaults synchronize];
 }
 
 /*
