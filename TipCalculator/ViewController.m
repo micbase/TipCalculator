@@ -14,9 +14,6 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *tipRate;
 @property (weak, nonatomic) IBOutlet UILabel *tipAmount;
 @property (weak, nonatomic) IBOutlet UILabel *totalAmount;
-- (IBAction)onTap:(id)sender;
-- (IBAction)onAmountChange:(id)sender;
-- (void)updateValues;
 @end
 
 @implementation ViewController
@@ -31,7 +28,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)onTap:(id)sender {
+- (IBAction)onTap:(UITapGestureRecognizer *)sender {
+    [self.view endEditing:YES];
+}
+
+- (IBAction)onRateChange:(id)sender {
     [self updateValues];
 }
 
